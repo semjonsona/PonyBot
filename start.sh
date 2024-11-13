@@ -5,9 +5,11 @@ VENV_DIR="venv"
 REQUIREMENTS_FILE="requirements.txt"
 PYTHON_SCRIPT="main.py"
 
-cd "$(dirname "$0")"
 echo "Pulling..."
-git pull
+# Works even if force-push had taken place
+cd "$(dirname "$0")"
+git fetch --all
+git reset --hard @{u}
 
 if [ ! -d "$VENV_DIR" ]; then
     echo "Creating virtual environment in $VENV_DIR..."
