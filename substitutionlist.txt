@@ -1,0 +1,167 @@
+// Lol this list is a bit trash - does not accommodate all the "fun" features that the languages have.
+//
+// English my boy
+weird chatty thingy:text generation transformer
+pony:person
+ponies:people
+everypony:everybody
+somepony:somebody
+anypony:anybody
+nopony:nobody
+hoof:hand
+hooves:hands
+muzzle:face
+muzzles:faces
+hoof:palm
+hooves:palms
+mane:hair
+manes:hairs
+muzzle:nose
+muzzles:noses
+withers:shoulders
+fetlock:ankle
+fetlocks:ankles
+girth:waist
+girths:waists
+hock:knee
+hocks:knees
+forelock:bangs
+forelocks:bangs
+crest:neck
+crests:necks
+stallion:man
+stallions:men
+mare:woman
+mares:women
+foal:baby
+foals:babies
+colt:boy
+colts:boys
+filly:girl
+fillies:girls
+herd:group
+herds:groups
+saddle:seat
+saddles:seats
+saddling:seating
+stirrup:foothold
+stirrups:footholds
+canter:jog
+canters:jogs
+cantered:jogged
+cantering:jogging
+trot:walk
+trots:walks
+trotted:walked
+trotting:walking
+gallop:run
+gallops:runs
+galloped:ran
+galloping:running
+snort:sniff
+snorts:sniffs
+snorted:sniffed
+snorting:sniffing
+mane comb:hairbrush
+mane combs:hairbrushes
+vet:doctor
+vets:doctors
+vetted:doctored
+vetting:doctoring
+endurance:stamina
+carriage:transport
+carriage:bus
+carriage:car
+carriage:train
+carriages:transports
+carriages:buses
+carriages:cars
+carriages:trains
+barn:house
+barns:houses
+rockology:geology
+// Russian
+// ok lets add some "funny" substitutions
+// I already imagine people will love them
+пони:пани
+пони:поне
+ПОНЯ:поня
+пони:человек
+пони:люди
+вcе пони:все мы
+кто-нибудь из пони:кто-нибудь из нас
+кто-то из пони:кто-то из нас
+ни один пони:никто из нас
+копыто:рука
+копыта:руки
+морда:лицо
+морды:лица
+грива:волосы
+гривы:волосы
+морда:нос
+морды:носы
+загривок:плечи
+скакательный сустав:щиколотка
+грудь:талия
+скакательные суставы:колени
+козырек:затылок
+жеребец:мужчина
+жеребцы:мужчины
+кобыла:женщина
+кобылы:женщины
+жеребенок:младенец
+жеребята:младенцы
+жеребец:парень
+жеребчики:мальчики
+кобылка:девочка
+кобылки:девочки
+табун:группа
+табуны:группы
+седло:сиденье
+стремена:упоры
+голоп:бег
+галопировать:бегать
+галопирую:бегаю
+галопируешь:бегаешь
+галопирует:бегает
+галопируем:бегаем
+галопируете:бегаете
+галопируют:бегают
+галопируй:бегай
+галопируйте:бегайте
+рысь:ходьба
+двигатся рысью:ходить
+походка:шаг
+двигатся рысью:шагать
+храпеть:шмыгать
+шерсть:кожа
+ветеринар:доктор
+карета:машина
+карета:автобус
+карета:поезд
+кареты:машины
+кареты:автобусы
+кареты:поезда
+конюшня:дом
+конюшни:дома
+мои крутые пони:пацаны
+табун:народ
+понят:ребят
+// Estonian
+poni:inimene
+ponid:inimesed
+iga poni:iga inimene
+keegi poni:kedagi
+mõni poni:keegi
+kabja:kätt
+kabjad:kätte
+hari:juuksed
+koonu:nina
+turja:õlad
+põlv:sääred
+põlved:sääred
+loomaarst:arst
+vanker:transport
+vanker:auto
+vanker:buss
+vanker:rong

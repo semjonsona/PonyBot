@@ -1,0 +1,15 @@
+[Unit]
+Description=PonyBot (Discord bot)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Change that
+ExecStart=/home/admin/ponybot/start.sh
+Restart=always
+RestartSec=1s
+StartLimitInterval=5
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
