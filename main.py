@@ -48,6 +48,10 @@ async def on_message(message):
     if 'ponyversion' == message.content:
         await message.delete()
         await message.channel.send(f'PonyBot version `{get_version()}`')
+    if 'ponystop!YESPLEASE' == message.content:
+        # Fantastic design! Simply delightful! No auth!! No context appropriateness checks!!!
+        exit()
+
     better_message = message.content
     # Throw-away joke quality code
     # We will replace it with an LLM anyway
