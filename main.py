@@ -1,4 +1,5 @@
 # 🦄🌈
+import os
 
 import discord
 
@@ -9,7 +10,8 @@ import random
 def get_version():
     try:
         # Run the git command to get the latest commit hash
-        result = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True)
+        result = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True,
+                                cwd=os.path.dirname(os.path.realpath(__file__)))
         return result.stdout.strip()[:6]  # Get the hash and remove any extra whitespace
     except subprocess.CalledProcessError as e:
         return 'maybe 0.0.1?'
