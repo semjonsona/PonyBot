@@ -12,9 +12,9 @@ def get_version():
         # Run the git command to get the latest commit hash
         result = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True,
                                 cwd=os.path.dirname(os.path.realpath(__file__)))
-        return result.stdout.strip()[:8]  # Get the hash and remove any extra whitespace
+        return 'beta ' + result.stdout.strip()[:8]  # Get the hash and remove any extra whitespace
     except subprocess.CalledProcessError as e:
-        return 'maybe 0.0.1?'
+        return 'maybe 0.1.0?'
 
 
 HASHING_MODULO = 2**64 - 59  # Is prime
@@ -38,7 +38,7 @@ def read_dictionary(filename):
             hash %= HASHING_MODULO
         if hash in dictionary[subpar_len]:
             # Crowdstrike disaster vibes code (*really* fun joke)
-            raise Exception(f'Substitutionlist is ambiguous for word {subpar_len}')
+            raise Exception(f'Substitutionlist is ambiguous for word {subpar_word}')
         dictionary[subpar_len][hash] = superior_word
     return dictionary
 
