@@ -1,11 +1,11 @@
 # 🦄🌈
 import os
 import time
-import string
 import subprocess
 import random
 
 import discord
+
 
 def get_version():
     try:
@@ -16,16 +16,92 @@ def get_version():
     except subprocess.CalledProcessError as e:
         return 'maybe 0.0.1?'
 
+
+HASHING_MODULO = 2**64 - 59  # Is prime
+HASHING_COEFFICIENT = 31337
+
+
 def read_dictionary(filename):
-    dictionary = []
+    dictionary = {}
     for line in open(filename, 'r', encoding='utf-8').read().split('\n'):
         if line.startswith('//'):
             continue
-        superior_word, subpar_word = line.split(':')  # Crowdstrike disaster vibes code
-        dictionary.append([superior_word, subpar_word])
-    return dictionary[::-1]
+        superior_word, subpar_word = line.split(':')  # Crowdstrike disaster vibes code (fun joke)
+
+        subpar_len = len(subpar_word)
+        if subpar_len not in dictionary:
+            dictionary[subpar_len] = {}
+        hash = 0
+        for c in list(subpar_word):
+            hash *= HASHING_COEFFICIENT
+            hash += ord(c)
+            hash %= HASHING_MODULO
+        dictionary[subpar_len][hash] = superior_word
+    return dictionary
+
 
 dictionary = read_dictionary('substitutionlist.txt')
+
+
+def obtain_substitutions(msg):
+    msg = list(msg)
+    substitutions = [None] * len(msg)
+    for ll in range(max(dictionary.keys()), -1, -1):
+        if ll not in dictionary.keys():
+            continue
+        tail_coff = pow(HASHING_COEFFICIENT, ll, HASHING_MODULO)
+
+        cur_hash = 0
+        fed = 0
+        for i in range(len(msg)):
+            cur_hash *= HASHING_COEFFICIENT
+            cur_hash += ord(msg[i])
+            cur_hash %= HASHING_MODULO
+            if fed == ll:
+                cur_hash = (cur_hash - tail_coff * ord(msg[i - ll])) % HASHING_MODULO
+            else:
+                fed += 1
+            if cur_hash in dictionary[ll]:
+                substitutions[i] = [i - ll + 1, i + 1, dictionary[ll][cur_hash]]
+                for i in range(i - ll + 1, i + 1):
+                    msg[i] = '\00'
+                fed = 0
+                cur_hash = 0
+    substitutions = [s for s in substitutions if s is not None]
+    return substitutions
+
+
+def message_rewriter(msg):
+    # Complexity: O(NK), N = len(msg), K = len(dictionary.items())
+    subs = obtain_substitutions(f'{msg}'.lower().replace('ё', 'е'))
+    if len(subs) == 0:
+        return msg
+
+    result = ''
+    subs_i = 0
+    msg_i = 0
+    while msg_i < len(msg):
+        # Proudly tested in production 😊
+        if subs_i < len(subs) and subs[subs_i][0] == msg_i:
+            repl = msg[subs[subs_i][0]:subs[subs_i][1]]
+            # TODO: clown case
+            caps = repl.isupper()
+            capitalized = repl[0].isupper()
+            substitution: str = subs[subs_i][2]
+            if caps:
+                substitution = substitution.upper()
+            elif capitalized:
+                substitution = substitution.capitalize()
+
+            result += f'\u200B*{substitution}*\u200B'
+            msg_i = subs[subs_i][1]
+            subs_i += 1
+        else:
+            result += msg[msg_i]
+            msg_i += 1
+    return result
+
+
 quotes = open('quotes.txt', 'r').read().split('\n')
 triggers = open('reactiontriggerlist.txt', 'r').read().split('\n')
 
@@ -58,24 +134,17 @@ async def on_message(message):
         time.sleep(0.5)
         exit()
 
-    # Legacy message rewriter
-    # TODO: I can make it way better!
-    better_message = message.content
-    # Throw-away joke quality code
-    # We will replace it with an LLM anyway
-    for superior_word, subpar_word in dictionary:
-        better_message = better_message.replace(subpar_word, f'\u200B*{superior_word}*\u200B')
-        # Optimization is not my passion today
-        better_message = better_message.replace(string.capwords(subpar_word), f'\u200B*{string.capwords(superior_word)}*\u200B')
+    # Smart message rewriter
+    better_message = message_rewriter(message.content)
     if better_message != message.content:
         await message.delete()  # 😈 mode
         await message.channel.send(f'<@{message.author.id}> :unicorn: :\n{better_message}')
+        return  # Rewriting the message is a lot as is
 
     # Maybe add reaction
     message_lower = str(message.content).lower()
     add_reaction = False
     for t in triggers:
-        # Optimization is not my passion today
         if t in message_lower:
             add_reaction = True
     if add_reaction:
