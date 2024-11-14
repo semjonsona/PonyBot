@@ -10,7 +10,10 @@ if __name__ == '__main__':
         superior_word, subpar_word = line.split(':')
         parsed_superior = morph.parse(superior_word)[0]
         parsed_subpar = morph.parse(subpar_word)[0]
+        forms_processed = []
         for subpar_form in parsed_subpar.lexeme:
+            if subpar_form.word in forms_processed:
+                continue
             gotchas = [getattr(subpar_form.tag, x) for x in FUNNY_WORDS]
             gotchas = [x for x in gotchas if x is not None]
 
@@ -21,6 +24,8 @@ if __name__ == '__main__':
                 for subset in combinations(gotchas, i):
                     inflected = parsed_superior.inflect(set(subset))
                     if inflected:
-                        print(f'{inflected.word}:{subpar_form.word}')
+
+                        print(f"{inflected.word.replace('ё', 'е')}:{subpar_form.word.replace('ё', 'е')}")
+                        forms_processed.append(subpar_form.word)
                         found = True
                         break

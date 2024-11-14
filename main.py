@@ -36,6 +36,9 @@ def read_dictionary(filename):
             hash *= HASHING_COEFFICIENT
             hash += ord(c)
             hash %= HASHING_MODULO
+        if hash in dictionary[subpar_len]:
+            # Crowdstrike disaster vibes code (*really* fun joke)
+            raise Exception(f'Substitutionlist is ambiguous for word {subpar_len}')
         dictionary[subpar_len][hash] = superior_word
     return dictionary
 
