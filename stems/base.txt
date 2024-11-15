@@ -1,84 +1,6 @@
-// // Base
-// English my boy! TODO: all forms, there ain't many!
+// Extra-special substitutions
 weird chatty thingy:text generation transformer
-pony:person
-ponies:people
-pony:human
-everypony:everybody
-somepony:somebody
-anypony:anybody
-nopony:nobody
-hoof:hand
-hooves:hands
-muzzle:face
-muzzles:faces
-hoof:palm
-hooves:palms
-mane:hair
-manes:hairs
-muzzle:nose
-muzzles:noses
-withers:shoulders
-fetlock:ankle
-fetlocks:ankles
-girth:waist
-girths:waists
-hock:knee
-hocks:knees
-forelocks:bangs
-crest:neck
-crests:necks
-stallion:man
-stallions:men
-mare:woman
-mares:women
-foal:baby
-foals:babies
-colt:boy
-colts:boys
-filly:girl
-fillies:girls
-herd:group
-herds:groups
-saddle:seat
-saddles:seats
-saddling:seating
-stirrup:foothold
-stirrups:footholds
-canter:jog
-canters:jogs
-cantered:jogged
-cantering:jogging
-trot:walk
-trots:walks
-trotted:walked
-trotting:walking
-gallop:run
-gallops:runs
-galloped:ran
-galloping:running
-snort:sniff
-snorts:sniffs
-snorted:sniffed
-snorting:sniffing
-mane comb:hairbrush
-mane combs:hairbrushes
-vet:doctor
-vets:doctors
-vetted:doctored
-vetting:doctoring
-endurance:stamina
-carriage:bus
-carriage:car
-carriages:buses
-carriages:cars
-carriages:trains
-barn:house
-barns:houses
 rockology:geology
-//
-// Ok lets add some "funny" substitutions
-// I already imagine people will love them
 пони:пани
 пони:поне
 вcе пони:все мы
@@ -87,4 +9,3 @@ rockology:geology
 ни один пони:никто из нас
 мои крутые пони:пацаны
 понят:ребят
-// //

@@ -44,11 +44,11 @@ def read_dictionary(filename):
 
 
 dictionary = read_dictionary('substitutionlist.txt')
-
+token, superadmin_id = [x for x in open('config', 'r').read().split('\n') if len(x) > 1]
 
 def obtain_substitutions(msg):
     msg = list(msg)
-    substitutions = [None] * len(msg)
+    substitutions = [[]] * len(msg)
     for ll in range(max(dictionary.keys()), -1, -1):
         if ll not in dictionary.keys():
             continue
@@ -70,7 +70,7 @@ def obtain_substitutions(msg):
                     msg[i] = '\00'
                 fed = 0
                 cur_hash = 0
-    substitutions = [s for s in substitutions if s is not None]
+    substitutions = [s for s in substitutions if s != []]
     return substitutions
 
 
@@ -105,7 +105,7 @@ def message_rewriter(msg):
     return result
 
 
-quotes = open('quotes.txt', 'r').read().split('\n')
+quotes = [x for x in open('quotes.txt', 'r').read().split('\n') if len(x) > 1]
 triggers = open('reactiontriggerlist.txt', 'r').read().split('\n')
 
 intents = discord.Intents.default()
@@ -126,18 +126,19 @@ async def on_message(message):
     # "Commands"
     if 'ponyquote' == message.content:
         await message.delete()
-        await message.channel.send(random.choice(quotes).replace(' | ', '\u000A'))
+        quote = random.choice(quotes).replace(' | ', '\u000A')
+        await message.channel.send(quote)
         return
     if 'ponyversion' == message.content:
         await message.delete()
         await message.channel.send(f'PonyBot version `{get_version()}`')
-    if 'ponystop!YESPLEASE' == message.content:
-        # Fantastic design! Simply delightful! No auth!! No context appropriateness checks!!!
+    if 'ponystop!YESPLEASE' == message.content and superadmin_id == str(message.author.id):
         await message.delete()
         time.sleep(0.5)
         exit()
 
     # Smart message rewriter
+    # Order of magnitude: ~30ms for a message at the Discord's default character limit
     better_message = message_rewriter(message.content)
     if better_message != message.content:
         await message.delete()  # 😈 mode
@@ -159,4 +160,4 @@ async def on_message(message):
         await message.channel.send(random.choice(quotes))
 
 if __name__ == '__main__':
-    client.run(open('token', 'r').read())
+    client.run(token)

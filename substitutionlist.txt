@@ -1,93 +1,148 @@
-// // Base
-// English my boy! TODO: all forms, there ain't many!
-weird chatty thingy:text generation transformer
-pony:person
-ponies:people
-pony:human
+// English my boy (from the stem)
 everypony:everybody
+everyponies:everybodies
+everyponying:everybodying
+everyponied:everybodied
 somepony:somebody
+someponies:somebodies
+someponying:somebodying
+someponied:somebodied
 anypony:anybody
+anyponies:anybodies
+anyponying:anybodying
+anyponied:anybodied
 nopony:nobody
+noponies:nobodies
+noponying:nobodying
+noponied:nobodied
+pony:person
+ponies:persons
+ponying:personning
+ponied:personned
+pony:human
+ponies:humans
+ponying:humanning
+ponied:humanned
 hoof:hand
-hooves:hands
+hoofs:hands
+hoofing:handing
+hoofed:handed
 muzzle:face
 muzzles:faces
+muzzling:facing
+muzzled:faced
 hoof:palm
-hooves:palms
+hoofs:palms
+hoofing:palming
+hoofed:palmed
 mane:hair
 manes:hairs
+maning:hairing
+maned:haired
 muzzle:nose
 muzzles:noses
+muzzling:nosing
+muzzled:nosed
+wither:shoulder
 withers:shoulders
+withering:shouldering
+withered:shouldered
 fetlock:ankle
 fetlocks:ankles
+fetlocking:ankling
+fetlocked:ankled
+a fetlock:an ankle
+a fetlocks:an ankles
+a fetlocking:an ankling
+a fetlocked:an ankled
 girth:waist
 girths:waists
+girthing:waisting
+girthed:waisted
 hock:knee
 hocks:knees
+hocking:kneeing
+hocked:kneeed
+forelock:bang
 forelocks:bangs
+forelocking:banging
+forelocked:banged
 crest:neck
 crests:necks
+cresting:necking
+crested:necked
 stallion:man
-stallions:men
+stallions:mans
+stallioning:manning
+stallioned:manned
 mare:woman
-mares:women
+mares:womans
+maring:womaning
+mared:womaned
 foal:baby
 foals:babies
+foaling:babying
+foaled:babied
 colt:boy
 colts:boys
+colting:boying
+colted:boyed
 filly:girl
 fillies:girls
+fillying:girling
+fillied:girled
 herd:group
 herds:groups
+herding:grouping
+herded:grouped
 saddle:seat
 saddles:seats
 saddling:seating
+saddled:seated
 stirrup:foothold
 stirrups:footholds
+stirrupping:footholding
+stirrupped:footholded
 canter:jog
-canters:jogs
-cantered:jogged
-cantering:jogging
+cants:jogs
+canting:jogging
+canted:jogged
 trot:walk
 trots:walks
-trotted:walked
 trotting:walking
+trotted:walked
 gallop:run
 gallops:runs
-galloped:ran
 galloping:running
+galloped:ran
 snort:sniff
 snorts:sniffs
-snorted:sniffed
 snorting:sniffing
+snorted:sniffed
 mane comb:hairbrush
 mane combs:hairbrushes
+mane combing:hairbrushing
+mane combed:hairbrushed
 vet:doctor
 vets:doctors
-vetted:doctored
 vetting:doctoring
+vetted:doctored
 endurance:stamina
+endurances:staminas
+endurancing:staminaing
+enduranced:staminaed
 carriage:bus
+carriages:busses
+carriaging:bussing
+carriaged:bussed
 carriage:car
-carriages:buses
 carriages:cars
-carriages:trains
+carriaging:carring
+carriaged:carred
 barn:house
 barns:houses
-rockology:geology
-//
-// Ok lets add some "funny" substitutions
-// I already imagine people will love them
-пони:пани
-пони:поне
-вcе пони:все мы
-кто-нибудь из пони:кто-нибудь из нас
-кто-то из пони:кто-то из нас
-ни один пони:никто из нас
-мои крутые пони:пацаны
-понят:ребят
-// //
+barning:housing
+barned:housed
 // Russian the troublemaker (from the stem)
 пони:человек
 пони:человека
@@ -115,16 +170,6 @@ rockology:geology
 кобылам:женщинам
 кобылами:женщинами
 кобылах:женщинах
-жеребец:мужчина
-жеребца:мужчины
-жеребцу:мужчине
-жеребца:мужчину
-жеребцом:мужчиной
-жеребцом:мужчиною
-жеребцов:мужчин
-жеребцам:мужчинам
-жеребцами:мужчинами
-жеребцах:мужчинах
 кобылка:девочка
 кобылки:девочки
 кобылке:девочке
@@ -135,6 +180,36 @@ rockology:geology
 кобылкам:девочкам
 кобылками:девочками
 кобылках:девочках
+кобылка:девушка
+кобылки:девушки
+кобылке:девушке
+кобылку:девушку
+кобылкой:девушкой
+кобылкой:девушкою
+кобылок:девушек
+кобылкам:девушкам
+кобылками:девушками
+кобылках:девушках
+жеребец:мужчина
+жеребца:мужчины
+жеребцу:мужчине
+жеребца:мужчину
+жеребцом:мужчиной
+жеребцом:мужчиною
+жеребцов:мужчин
+жеребцам:мужчинам
+жеребцами:мужчинами
+жеребцах:мужчинах
+жеребец:мальчик
+жеребца:мальчика
+жеребцу:мальчику
+жеребцом:мальчиком
+жеребце:мальчике
+жеребцы:мальчики
+жеребцов:мальчиков
+жеребцам:мальчикам
+жеребцами:мальчиками
+жеребцах:мальчиках
 жеребец:парень
 жеребца:парня
 жеребцу:парню
@@ -145,6 +220,15 @@ rockology:geology
 жеребцам:парням
 жеребцами:парнями
 жеребцах:парнях
+жеребец:юноша
+жеребца:юноши
+жеребцу:юноше
+жеребца:юношу
+жеребцом:юношей
+жеребцом:юношею
+жеребцам:юношам
+жеребцами:юношами
+жеребцах:юношах
 жеребенок:младенец
 жеребенка:младенца
 жеребенку:младенцу
@@ -1193,3 +1277,14 @@ karideni:rahvaini
 karidena:rahvaina
 karideta:rahvasteta
 karidega:rahvastega
+// Extra-special substitutions
+weird chatty thingy:text generation transformer
+rockology:geology
+пони:пани
+пони:поне
+вcе пони:все мы
+кто-нибудь из пони:кто-нибудь из нас
+кто-то из пони:кто-то из нас
+ни один пони:никто из нас
+мои крутые пони:пацаны
+понят:ребят

@@ -1,0 +1,36 @@
+everypony:everybody
+somepony:somebody
+anypony:anybody
+nopony:nobody
+pony:person
+pony:human
+hoof:hand
+muzzle:face
+hoof:palm
+mane:hair
+muzzle:nose
+withers:shoulders
+fetlock:ankle
+a fetlock:an ankle
+girth:waist
+hock:knee
+forelocks:bangs
+crest:neck
+stallion:man
+mare:woman
+foal:baby
+colt:boy
+filly:girl
+herd:group
+saddle:seat
+stirrup:foothold
+canter:jog
+trot:walk
+gallop:run
+snort:sniff
+mane comb:hairbrush
+vet:doctor
+endurance:stamina
+carriage:bus
+carriage:car
+barn:house
