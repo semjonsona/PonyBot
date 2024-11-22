@@ -3,6 +3,7 @@ import os
 import time
 import subprocess
 import random
+import re
 
 import discord
 
@@ -44,13 +45,31 @@ def read_dictionary(filename):
 
 
 dictionary = read_dictionary('substitutionlist.txt')
+exception_dictionary = read_dictionary('substitutionexceptionslist.txt')
 token, superadmin_id = [x for x in open('config', 'r').read().split('\n') if len(x) > 1]
 
+
+PROTECTED_REGEXES = [
+    re.compile(r'<:[a-zA-Z0-9_]+:\d+>'),  # Custom emojis
+    re.compile(r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)')
+]
+def unprotected_regions(msg):
+    msglist = list(msg)
+    for reg in PROTECTED_REGEXES:
+        for match in reg.finditer(msg):
+            sp = match.span()
+            msglist[sp[0]:sp[1]] = msglist[sp[0]:sp[1]] = ['\00'] * (sp[1] - sp[0])
+    return msglist
+
+
 def obtain_substitutions(msg):
-    msg = list(msg)
+    msg = unprotected_regions(msg)
     substitutions = [[]] * len(msg)
-    for ll in range(max(dictionary.keys()), -1, -1):
-        if ll not in dictionary.keys():
+
+    lenghts = range(max(max(dictionary.keys()), max(exception_dictionary)))[::-1]
+    dicts = [exception_dictionary, dictionary]
+    for ll, udict in [(x, y) for y in dicts for x in lenghts]:
+        if ll not in udict.keys():
             continue
         tail_coff = pow(HASHING_COEFFICIENT, ll, HASHING_MODULO)
 
@@ -64,8 +83,9 @@ def obtain_substitutions(msg):
                 cur_hash = (cur_hash - tail_coff * ord(msg[i - ll])) % HASHING_MODULO
             else:
                 fed += 1
-            if cur_hash in dictionary[ll]:
-                substitutions[i] = [i - ll + 1, i + 1, dictionary[ll][cur_hash]]
+            if cur_hash in udict[ll]:
+                if udict[ll][cur_hash] != '':  # Substitution to empty is interpreted as _ignore_
+                    substitutions[i] = [i - ll + 1, i + 1, udict[ll][cur_hash]]
                 for i in range(i - ll + 1, i + 1):
                     msg[i] = '\00'
                 fed = 0
@@ -96,7 +116,7 @@ def message_rewriter(msg):
             elif capitalized:
                 substitution = substitution.capitalize()
 
-            result += f'\u200B*{substitution}*\u200B'
+            result += f'\u2060*{substitution}*\u2060'
             msg_i = subs[subs_i][1]
             subs_i += 1
         else:

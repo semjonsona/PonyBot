@@ -1,0 +1,119 @@
+// sl = [x.split(':')[1] for x in open('substitutionlist.txt', 'r').read().split('\n') if ':' in x]
+// sel = [x[1:] for x in open('substitutionexceptionslist.txt', 'r').read().split('\n')] # Wow that's some crazy recursion, man!
+// gg = [x for x in www if any([ll in x for ll in sl]) and x not in sl]
+// gg = [x for x in gg if not any([ll in x for ll in sel])]
+//
+// lang:ru, abbc3aab-colliding hoof-picked
+// www = open('research/100000-russian-words.txt', 'r').read().split('\n')
+// Ended at "субсидия"
+:домой
+:вид
+:виж
+:можно
+:ность
+:сиде
+:сидя
+:находи
+:находя
+:происходить
+:улиц
+:рядом
+:относ
+:приходиться
+:струк
+:носи
+:инос
+:дума
+:столиц
+:лици
+:лице
+:риди
+:блиц
+:итал
+:идио
+:бидет
+:едом
+:фрук
+:носок
+:придум
+:должнос
+:ошел
+:ност
+:лидия
+:знос
+:ренос
+:чнос
+:шелк
+:домин
+:эпидем
+:напар
+:домен
+:мишел
+:лицат
+:рандом
+// lang:en, abbc3aab-colliding hoof-picked
+// www = [x.split('\t')[0] for x in open('research/frequency_list.txt', 'r').read().split('\n') if '\t' in x]
+// Ended at "manor"
+// Sorry lang:et
+:last
+:many
+:carry
+:busin
+:care
+:surface
+:demand
+:range
+:manner
+:command
+:form
+:exist
+:gran
+:trans
+:rights
+:rance
+:rank
+:liste
+:sister
+:ministe
+:chair
+:card
+:perma
+:bran
+:abus
+:gist
+:sist
+:manifest
+:arant
+:carbon
+:scar
+:busy
+:manus
+:rando
+:carri
+:collapse
+:carriage
+:rant
+:trun
+:roman
+:carv
+:bush
+:strand
+:drunk
+:cart
+:semantic
+:merch
+:carp
+:tyran
+:memoran
+:carb
+:mansion
+:fran
+:mant
+:mane
+:elapse
+:ranc
+:facet
+:robust
+:manif
+:autobio
+:bust

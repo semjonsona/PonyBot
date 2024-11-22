@@ -2,3 +2,4 @@ config
 venv
 .venv
 .idea
+**/research
