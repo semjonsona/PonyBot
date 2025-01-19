@@ -1,4 +1,5 @@
 config
+config.cfg
 venv
 .venv
 .idea

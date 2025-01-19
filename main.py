@@ -44,10 +44,20 @@ def read_dictionary(filename):
     return dictionary
 
 
+def read_config():
+    cfg = {}
+    cfgtxt = open('config.cfg', 'r').read()
+    for line in cfgtxt.split('\n'):
+        if len(line) < 2:
+            continue
+        key, value = line.split('=')  # See it in a stacktrace? Malformed config.cfg!
+        cfg[key] = value
+    return cfg
+
+
 dictionary = read_dictionary('substitutionlist.txt')
 exception_dictionary = read_dictionary('substitutionexceptionslist.txt')
-token, superadmin_id = [x for x in open('config', 'r').read().split('\n') if len(x) > 1]
-
+cfg = read_config()
 
 PROTECTED_REGEXES = [
     re.compile(r'<:[a-zA-Z0-9_]+:\d+>'),  # Custom emojis
@@ -139,7 +149,7 @@ async def on_ready():
 
 
 @client.event
-async def on_message(message):
+async def on_message(message : discord.Message):
     if message.author == client.user:
         return  # Avoiding cacopony
 
@@ -152,7 +162,7 @@ async def on_message(message):
     if 'ponyversion' == message.content:
         await message.delete()
         await message.channel.send(f'PonyBot version `{get_version()}`')
-    if 'ponystop!YESPLEASE' == message.content and superadmin_id == str(message.author.id):
+    if 'ponystop!YESPLEASE' == message.content and cfg['superadmin_id'] == str(message.author.id):
         await message.delete()
         time.sleep(0.5)
         exit()
@@ -161,9 +171,13 @@ async def on_message(message):
     # Order of magnitude: ~30ms for a message at the Discord's default character limit
     better_message = message_rewriter(message.content)
     if better_message != message.content:
-        await message.delete()  # 😈 mode
-        await message.channel.send(f'<@{message.author.id}> :unicorn: :\n{better_message}')
-        return  # Rewriting the message is a lot as is
+        if cfg['enforcer_mode'] == 'True':
+            await message.delete()  # 😈 mode
+            await message.channel.send(f'<@{message.author.id}> :unicorn: :\n{better_message}')
+        else:
+            await message.add_reaction('😢')
+            await message.reply(f'{better_message}')
+        return  # Sending a message is a lot as is
 
     # Maybe add reaction
     message_lower = str(message.content).lower()
@@ -180,4 +194,4 @@ async def on_message(message):
         await message.channel.send(random.choice(quotes))
 
 if __name__ == '__main__':
-    client.run(token)
+    client.run(cfg['token'])
