@@ -1,6 +1,8 @@
 // Extra-special substitutions
 weird chatty thingy:text generation transformer
 rockology:geology
+withers:shoulders
+forelocks:bangs
 пони:пани
 пони:поне
 вcе пони:все мы

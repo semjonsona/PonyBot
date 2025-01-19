@@ -1,148 +1,152 @@
 // English my boy (from the stem)
 everypony:everybody
 everyponies:everybodies
-everyponying:everybodying
-everyponied:everybodied
 somepony:somebody
 someponies:somebodies
-someponying:somebodying
-someponied:somebodied
 anypony:anybody
 anyponies:anybodies
-anyponying:anybodying
-anyponied:anybodied
 nopony:nobody
 noponies:nobodies
-noponying:nobodying
-noponied:nobodied
 pony:person
-ponies:persons
-ponying:personning
-ponied:personned
+ponies:people
 pony:human
-ponies:humans
-ponying:humanning
-ponied:humanned
+ponies:humen
 hoof:hand
 hoofs:hands
-hoofing:handing
-hoofed:handed
 muzzle:face
 muzzles:faces
-muzzling:facing
-muzzled:faced
 hoof:palm
 hoofs:palms
-hoofing:palming
-hoofed:palmed
 mane:hair
 manes:hairs
-maning:hairing
-maned:haired
 muzzle:nose
 muzzles:noses
-muzzling:nosing
-muzzled:nosed
-wither:shoulder
-withers:shoulders
-withering:shouldering
-withered:shouldered
 fetlock:ankle
 fetlocks:ankles
-fetlocking:ankling
-fetlocked:ankled
 a fetlock:an ankle
 a fetlocks:an ankles
-a fetlocking:an ankling
-a fetlocked:an ankled
 girth:waist
 girths:waists
-girthing:waisting
-girthed:waisted
 hock:knee
 hocks:knees
-hocking:kneeing
-hocked:kneeed
-forelock:bang
-forelocks:bangs
-forelocking:banging
-forelocked:banged
 crest:neck
 crests:necks
-cresting:necking
-crested:necked
 stallion:man
-stallions:mans
-stallioning:manning
-stallioned:manned
+stallions:men
 mare:woman
-mares:womans
-maring:womaning
-mared:womaned
+mares:women
 foal:baby
 foals:babies
-foaling:babying
-foaled:babied
+foal:kid
+foals:kids
+foal:child
+foals:children
 colt:boy
 colts:boys
-colting:boying
-colted:boyed
 filly:girl
 fillies:girls
-fillying:girling
-fillied:girled
 herd:group
 herds:groups
-herding:grouping
-herded:grouped
 saddle:seat
 saddles:seats
-saddling:seating
-saddled:seated
 stirrup:foothold
 stirrups:footholds
-stirrupping:footholding
-stirrupped:footholded
 canter:jog
-cants:jogs
-canting:jogging
-canted:jogged
+canters:jogs
 trot:walk
 trots:walks
-trotting:walking
-trotted:walked
 gallop:run
 gallops:runs
-galloping:running
-galloped:ran
 snort:sniff
 snorts:sniffs
-snorting:sniffing
-snorted:sniffed
 mane comb:hairbrush
 mane combs:hairbrushes
-mane combing:hairbrushing
-mane combed:hairbrushed
 vet:doctor
 vets:doctors
-vetting:doctoring
-vetted:doctored
 endurance:stamina
 endurances:staminas
-endurancing:staminaing
-enduranced:staminaed
 carriage:bus
-carriages:busses
-carriaging:bussing
-carriaged:bussed
+carriages:buses
 carriage:car
 carriages:cars
-carriaging:carring
-carriaged:carred
 barn:house
 barns:houses
-barning:housing
-barned:housed
+hoof:fist
+hoofs:fists
+hoof:foot
+hoofs:feet
+fillydelphia:philadelphia
+fillydelphias:philadelphias
+trottingham:nottingham
+trottinghams:nottinghams
+manehattan:manhattan
+manehattans:manhattans
+amareica:america
+amareicas:americas
+saddle:saudi
+saddles:saudis
+Equestria:world
+Equestrias:worlds
+nightmare night:halloween
+nightsmare nights:halloweens
+hearth's warming eve:christmas
+hearth's warming eves:christmases
+hearts and hooves day:valentines day
+hearts and hooves days:valentines days
+hearts and hooves day:valentine's day
+hearts and hooves days:valentine's days
+bunny day:easter
+bunny days:easters
+parasprite:troll
+parasprites:trolls
+mane:main
+manes:mains
+bits:money
+bitss:monies
+Amareican bit:dollar
+Amareican bits:dollars
+old world bit:euro
+old world bits:euroes
+cutie mark:tattoo
+cutie marks:tattoos
+clop:fap
+clops:faps
+sure as hay:sure as hell
+sure as hays:sure as hells
+the hay:the heck
+the hays:the hecks
+the hay:the hell
+the hays:the hells
+saddle-sore:butthurt
+saddle-sores:butthurts
+hay:hey
+hays:heys
+doctor whooves:doctor who
+doctor whoovess:doctor whoes
+dr. whooves:dr. who
+dr. whoovess:dr. whoes
+dr whooves:dr who
+dr whoovess:dr whoes
+cowpony:cowboy
+cowponies:cowboys
+gentlecolt:gentleman
+gentlecolts:gentlemen
+tenderfilly:lady
+tenderfillies:ladies
+neighsayer:naysayer
+neighsayers:naysayers
+old-trotter:old-timer
+old-trotters:old-timers
+hoof-bump:high-five
+hoof-bumps:high-fives
+hoofbump:highfive
+hoofbumps:highfives
+mareathon:marathon
+mareathons:marathons
+foal:fool
+foals:fools
+foalish:foolish
+foalishes:foolishes
 // Russian the troublemaker (from the stem)
 пони:человек
 пони:человека
@@ -220,6 +224,16 @@ barned:housed
 жеребцам:парням
 жеребцами:парнями
 жеребцах:парнях
+жеребец:пацан
+жеребца:пацана
+жеребцу:пацану
+жеребцом:пацаном
+жеребце:пацане
+жеребцы:пацаны
+жеребцов:пацанов
+жеребцам:пацанам
+жеребцами:пацанами
+жеребцах:пацанах
 жеребец:юноша
 жеребца:юноши
 жеребцу:юноше
@@ -259,6 +273,15 @@ barned:housed
 табунам:группам
 табунами:группами
 табунах:группах
+табун:компания
+табуна:компании
+табун:компанию
+табуном:компанией
+табуном:компаниею
+табунов:компаний
+табунам:компаниям
+табунами:компаниями
+табунах:компаниях
 шерсть:кожа
 шерсти:кожи
 шерсти:коже
@@ -543,6 +566,16 @@ barned:housed
 каретам:автобусам
 каретами:автобусами
 каретах:автобусах
+хлев:роддом
+хлева:роддома
+хлеву:роддому
+хлевом:роддомом
+хлеве:роддоме
+хлева:роддомы
+хлевов:роддомов
+хлевам:роддомам
+хлевами:роддомами
+хлевах:роддомах
 конюшня:дом
 конюшни:дома
 конюшни:дому
@@ -1280,6 +1313,8 @@ karidega:rahvastega
 // Extra-special substitutions
 weird chatty thingy:text generation transformer
 rockology:geology
+withers:shoulders
+forelocks:bangs
 пони:пани
 пони:поне
 вcе пони:все мы

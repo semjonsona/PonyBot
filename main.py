@@ -38,8 +38,9 @@ def read_dictionary(filename):
             hash += ord(c)
             hash %= HASHING_MODULO
         if hash in dictionary[subpar_len]:
-            # Crowdstrike disaster vibes code (*really* fun joke)
-            raise Exception(f'Substitutionlist is ambiguous for word {subpar_word}')
+            pass
+            # # Crowdstrike disaster vibes code (*really* fun joke)
+            # raise Exception(f'Substitutionlist is ambiguous for word {subpar_word}')
         dictionary[subpar_len][hash] = superior_word
     return dictionary
 
@@ -176,7 +177,7 @@ async def on_message(message : discord.Message):
             await message.channel.send(f'<@{message.author.id}> :unicorn: :\n{better_message}')
         else:
             await message.add_reaction('😢')
-            await message.reply(f'{better_message}')
+            await message.reply(f'{better_message}', mention_author=False)
         return  # Sending a message is a lot as is
 
     # Maybe add reaction

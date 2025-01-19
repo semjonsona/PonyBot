@@ -5,34 +5,22 @@ import sys
 # You will need to install all these. Good luck.
 # Also they take like 10 seconds to import
 import nltk
+from textblob import Word
 import pymorphy2
-from pattern.en import lexeme  # My IDE does not even believe that this exists...
 from estnltk.vabamorf.morf import synthesize
-
-ru_morph = pymorphy2.MorphAnalyzer()
 
 def expand_en_stems():
     print('// English my boy (from the stem)')
+    #nltk.download('wordnet')
     for line in open('stems/en.txt', 'r', encoding='utf-8').read().split('\n'):
-        while True:
-            try:  # Working around an *unfathomably* ridiculous bug in pattern.en
-                superior_word, subpar_word = line.split(':')
-                superior_lexemes = lexeme(superior_word)
-                subpar_lexemes = lexeme(subpar_word)
-                # Honestly, pattern is *bad*
-                # But English is so forgiving it will suffice for our 80/20 purposes
-                assert len(superior_lexemes) == len(subpar_lexemes)
-                for i in range(len(superior_lexemes)):
-                    print(f'{superior_lexemes[i]}:{subpar_lexemes[i]}')
-                break
-            except Exception as e:
-                if e is AssertionError:
-                    raise e
+        superior_word, subpar_word = line.split(':')
+        print(f'{superior_word}:{subpar_word}')
+        print(f'{Word(superior_word).pluralize()}:{Word(subpar_word).pluralize()}')
 
 
 def expand_ru_stems():
     print('// Russian the troublemaker (from the stem)')
-
+    ru_morph = pymorphy2.MorphAnalyzer()  # Its the worst... Basically, you need to patch its source to make it work
     # Я без понятия если честно что большинство из них делает, поэтому YOLO
     FUNNY_WORDS = ['animacy', 'aspect', 'case', 'gender', # <- род существительных это самая бесполезная фича языка
                    'involvement', 'mood', 'number', 'person', 'tense', 'transitivity', 'voice']

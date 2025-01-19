@@ -9,16 +9,16 @@ muzzle:face
 hoof:palm
 mane:hair
 muzzle:nose
-withers:shoulders
 fetlock:ankle
 a fetlock:an ankle
 girth:waist
 hock:knee
-forelocks:bangs
 crest:neck
 stallion:man
 mare:woman
 foal:baby
+foal:kid
+foal:child
 colt:boy
 filly:girl
 herd:group
@@ -34,3 +34,41 @@ endurance:stamina
 carriage:bus
 carriage:car
 barn:house
+hoof:fist
+hoof:foot
+fillydelphia:philadelphia
+trottingham:nottingham
+manehattan:manhattan
+amareica:america
+saddle:saudi
+Equestria:world
+nightmare night:halloween
+hearth's warming eve:christmas
+hearts and hooves day:valentines day
+hearts and hooves day:valentine's day
+bunny day:easter
+parasprite:troll
+mane:main
+bits:money
+Amareican bit:dollar
+old world bit:euro
+cutie mark:tattoo
+clop:fap
+sure as hay:sure as hell
+the hay:the heck
+the hay:the hell
+saddle-sore:butthurt
+hay:hey
+doctor whooves:doctor who
+dr. whooves:dr. who
+dr whooves:dr who
+cowpony:cowboy
+gentlecolt:gentleman
+tenderfilly:lady
+neighsayer:naysayer
+old-trotter:old-timer
+hoof-bump:high-five
+hoofbump:highfive
+mareathon:marathon
+foal:fool
+foalish:foolish
