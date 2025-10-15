@@ -148,7 +148,15 @@ tree = discord.app_commands.CommandTree(client)
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-    await tree.sync()
+    for guild in client.guilds:
+        await tree.sync(guild=guild)
+        print(f'Synced commands in {guild.name} ({guild.id})')
+
+
+@client.event
+async def on_guild_join(guild: discord.Guild):
+    await tree.sync(guild=guild)
+    print(f'Synced commands in new guild {guild.name} ({guild.id})')
 
 
 @tree.command(name="ponyversion", description="Show PonyBot version")
