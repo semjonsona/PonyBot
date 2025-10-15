@@ -142,31 +142,40 @@ triggers = open('reactiontriggerlist.txt', 'r').read().split('\n')
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
+tree = discord.app_commands.CommandTree(client)
 
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+    await tree.sync()
+
+
+@tree.command(name="ponyversion", description="Show PonyBot version")
+async def ponyversion(interaction: discord.Interaction):
+    await interaction.response.send_message(f'PonyBot version `{get_version()}`', ephemeral=True)
+
+
+@tree.command(name="ponyquote", description="Send a random pony quote")
+async def ponyquote(interaction: discord.Interaction):
+    quote = random.choice(quotes).replace(' | ', '\u000A')
+    await interaction.response.send_message(quote)
+
+
+@tree.command(name="ponystop", description="Stop PonyBot (superadmin only)")
+async def ponystop(interaction: discord.Interaction):
+    if cfg['superadmin_id'] != str(interaction.user.id):
+        await interaction.response.send_message("Access denied.", ephemeral=True)
+        return
+    await interaction.response.send_message("Stopping...", ephemeral=True)
+    time.sleep(0.5)
+    exit()
 
 
 @client.event
 async def on_message(message : discord.Message):
     if message.author == client.user:
         return  # Avoiding cacopony
-
-    # "Commands"
-    if 'ponyquote' == message.content:
-        await message.delete()
-        quote = random.choice(quotes).replace(' | ', '\u000A')
-        await message.channel.send(quote)
-        return
-    if 'ponyversion' == message.content:
-        await message.delete()
-        await message.channel.send(f'PonyBot version `{get_version()}`')
-    if 'ponystop!YESPLEASE' == message.content and cfg['superadmin_id'] == str(message.author.id):
-        await message.delete()
-        time.sleep(0.5)
-        exit()
 
     # Smart message rewriter
     # Order of magnitude: ~30ms for a message at the Discord's default character limit
